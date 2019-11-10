@@ -4,7 +4,6 @@ import { withAuthSync } from '../utils/auth'
 
 const Branch = props => {
     const {location} = props;
-    console.log("prop =" + JSON.stringify(props))
     return (
         <PageHeader
             style={{

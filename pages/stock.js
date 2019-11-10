@@ -2,7 +2,7 @@ import React from 'react';
 import fetch from 'isomorphic-unfetch'
 import Layout from '../components/layout'
 import nextCookie from 'next-cookies'
-import { List, Avatar, Modal, notification, Icon } from 'antd';
+import { List, Modal, notification, Icon } from 'antd';
 import { withAuthSync } from '../utils/auth'
 import getHost from '../utils/get-host'
 import Router from 'next/router'
@@ -96,9 +96,6 @@ const Stock = props => {
                     }
                   >
                       <List.Item.Meta
-                        avatar={
-                          <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-                        }
                         title={<a href="https://ant.design">{item.name}</a>}
                         description={<span> Current Stock Level: {item.qoh}</span>}
                       />

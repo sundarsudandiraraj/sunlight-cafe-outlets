@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import LeftMenu from './LeftMenu'
-import RightMenu from './RightMenu'
-
+import { Menu } from 'antd';
+import { logout } from '../utils/auth'
 class Header extends Component {
 render() {
     return (
@@ -12,10 +11,24 @@ render() {
 
           <div className="menuCon">
             <div className="leftMenu">
-              <LeftMenu />
+                <Menu mode="horizontal">
+                    <Menu.Item key="home">
+                    <a href="/">Home</a>
+                    </Menu.Item>
+                    <Menu.Item key="menu">
+                    <a href="/menu">Menu</a>
+                    </Menu.Item>
+                    <Menu.Item key="stock">
+                    <a href="/stock">Stocks</a>
+                    </Menu.Item>
+                </Menu>
             </div>
             <div className="rightMenu">
-                <RightMenu />
+            <Menu mode="horizontal">
+                <Menu.Item key="logout">
+                <a onClick={logout}>Logout</a>
+                </Menu.Item>
+            </Menu>
             </div>
         </div>
         <style jsx>{`
@@ -57,66 +70,6 @@ render() {
               .menuCon .rightMenu{
                 float: right;
               }
-              .barsMenu{
-                float: right;
-                height: 32px;
-                padding: 6px;
-                margin-top: 8px;
-                display: none;
-                background: none;
-              }
-              .barsBtn{
-                display: block;
-                width: 20px;
-                height: 2px;
-                background: #1890ff;
-                position: relative;
-              }
-              .barsBtn:after,.barsBtn:before{
-                content: attr(x);
-                width: 20px;
-                position: absolute;
-                top: -6px;
-                left: 0;
-                height: 2px;
-                background: #1890ff;
-              }
-              .barsBtn:after{
-                top: auto;
-                bottom: -6px;
-              }
-              .ant-drawer-body{
-                padding: 0;
-              }
-              .ant-drawer-body .ant-menu-horizontal > .ant-menu-item, .ant-drawer-body .ant-menu-horizontal > .ant-menu-submenu{
-                display: inline-block;
-                width: 100%;
-              }
-              .ant-drawer-body .ant-menu-horizontal{
-                border-bottom: none;
-              }
-              .ant-drawer-body .ant-menu-horizontal > .ant-menu-item:hover{
-                border-bottom-color: transparent;
-              }
-              
-              @media(max-width: 767px){
-                .barsMenu{
-                  display: inline-block;
-                }
-                .leftMenu,.rightMenu{
-                  display: none;
-                }
-                .logo a{
-                  margin-left: -20px;
-                }
-                .menuCon .ant-menu-item, .menuCon .ant-menu-submenu-title{
-                  padding: 1px 20px;
-                }
-                .logo a{
-                  padding: 10px 20px;
-                }
-              }
-            
         `}</style>
         </nav>
     );
