@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Header from './header'
-import Branch from './branch'
+import Branch from './Branch'
 
 const Layout = props => (
   <React.Fragment>
