@@ -7,7 +7,7 @@ export const login = ({ token, location, locationName }) => {
   cookie.set('token', token, { expires: 1 })
   cookie.set('location', location, { expires: 1 })
   cookie.set('locationName', locationName, { expires: 1 })
-  Router.push('/menu')
+  Router.push('/dashboard')
 }
 
 export const auth = ctx => {

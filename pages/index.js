@@ -136,7 +136,7 @@ Login.getInitialProps = async (ctx) => {
     const redirectOnError = () =>
       typeof window !== 'undefined'
         ? Router.push('/menu')
-        : ctx.res.writeHead(302, { Location: '/menu' }).end()
+        : ctx.res.writeHead(302, { Location: '/dashboard' }).end()
     
     if(location && token){
       return await redirectOnError()
